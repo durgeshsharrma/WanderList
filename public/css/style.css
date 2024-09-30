@@ -1,0 +1,133 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FCFAEE;
+    box-sizing: border-box;
+}
+
+
+.container{
+    flex: 1;
+}
+
+/* ===================================navbar styling=================================================================*/
+
+nav{
+    height: 5rem;
+}
+
+.navbar-brand .fa-nfc-symbol{
+    font-size: 2rem !important;
+    color: red;
+}
+
+
+.navbar{
+    background-color: #384B70 !important;
+}
+
+
+.top-img .brand{
+    font-size: 5rem;
+    color: red;
+}
+
+
+
+/* ===============================Footer Design========================================= */
+.footer{
+    
+    height: 5rem;
+    /* background-color: rgb(244, 232, 232); */
+    align-content: center;
+    text-align: center;
+}
+
+.footer-brand{
+    font-weight: 700;
+}
+
+.fa-brands{
+    font-size: 1.25rem;
+}
+
+
+/* ===========================Card Styling=========================== */
+
+
+.card-title{
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-link{
+    text-decoration: none;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* ==========================show Route styling============================== */
+
+.show-card{
+    object-fit: cover;
+    object-position : center;
+    border: none;
+
+}
+
+.fa-location-dot{
+    color: red;
+}
+
+.fa-earth-americas{
+    color: blue;
+}
+
+.card-body{
+    padding-top: 1rem !important;
+}
+
+.btn-wide {
+    width: 150px; /* Adjust the width as needed */
+}
+
+.show-img{
+    border-radius: 20px;
+}
+
+.btns .edit-btn ,.del-btn{
+    margin-right: 1rem;
+    width: 100px;
+}
+
+.btns .btn{
+width: 100%;
+}
+
+
+/* login page */
+
+
+.card{
+    border: none;
+}
+
+
+.left-img-ver-center{
+    align-content: center;
+}
+
+
+
+
+
+
+

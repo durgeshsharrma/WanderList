@@ -1,0 +1,33 @@
+<% layout('/layouts/boilerplate') -%>
+
+
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols mt-3">
+        
+        
+            <% for( let resort of resorts ) { %>
+
+
+                <a class="card-link" href="/home/<%= resort._id %>">
+                    
+                        <div class="card p-4 mb-4 card-overlay">
+                            <img style="height: 20rem" src="<%= resort.image %>" class="card-img-top" alt="">
+                            <div class="card-img-overlay"></div>
+                            <div class="card-body p-0">
+                                <p class="card-title fw-100"><%= resort.title %></p>
+                                <p class="card-text">Price :  &#8377; <%= resort.price %> / night</p>
+                               
+                            </div>
+                        </div>
+    
+                   
+                    </a>
+                  
+                
+    
+               <% } %>
+          
+
+           
+    
+    </div>
