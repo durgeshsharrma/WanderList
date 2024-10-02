@@ -14,7 +14,7 @@ body{
 /* ===================================navbar styling=================================================================*/
 
 nav{
-    height: 5rem;
+   min-height: 5rem;
 }
 
 .navbar-brand .fa-nfc-symbol{
@@ -252,6 +252,7 @@ body {
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+
 
 
 
