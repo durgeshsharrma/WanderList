@@ -35,7 +35,7 @@ module.exports.reviewAuth = async(req , res , next) => {
 module.exports.isOwner = async(req , res , next) => {
     let {id} = req.params;
     let findResort = await resort.findById(id);
-    if(!findResort.owner.equals(res.locals._id)){
+    if(!findResort.owner.equals(res.locals.currUser._id)){
         req.flash('error' ,'You do not have permission to make changes in that');
        return res.redirect(`/home/${id}`);
     }
