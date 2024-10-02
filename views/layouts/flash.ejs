@@ -1,0 +1,9 @@
+<!-- Display success message -->
+<% if (successMsg.length && successMsg) { %>
+    <div class="flash-message success" id="successMessage"><%= successMsg %></div>
+<% } %>
+
+<!-- Display error message -->
+<% if (errorMsg.length && errorMsg) { %>
+    <div class="flash-message error" id="errorMessage"><%= errorMsg %></div>
+<% } %>

@@ -5,6 +5,7 @@ const { userSchema } = require('../SchemaValidate');
 const ExpressError = require('../utilis/ExpressError');
 const wrapAsync = require('../utilis/wrapAsync');
 const passport = require('passport');
+const {saveRedirectUrl} = require('../middleware');
 
 
 
@@ -25,7 +26,7 @@ router.get('/signup' , (req , res) => {
     res.render('user/signup');
 })
 
-router.post('/signup' ,validateUser , wrapAsync(async(req , res)=> {
+router.post('/signup' , wrapAsync(async(req , res,next)=> {
     
     let newUser = new user(req.body);
     
@@ -38,12 +39,36 @@ router.post('/signup' ,validateUser , wrapAsync(async(req , res)=> {
              if(err){
                 return next(err);
              }
+             req.flash('success' , 'Welcome to WanderList')
              res.redirect('/home')
 
     })
 
-}))
+}));
 
+router.get('/login' , (req , res) => {
+  res.render('user/login')
+})
+
+
+router.post('/login' ,saveRedirectUrl ,passport.authenticate('local' , {failureRedirect : '/login' , failureFlash : true }) ,wrapAsync( async(req , res) => {
+           req.flash('success' , "Welcome Back To WanderList");
+           let redirectUrl = res.locals.redirectUrl || '/home';
+    
+           res.redirect(redirectUrl);
+
+}));
+
+
+router.get('/logout' , (req , res , next) => {
+  req.logOut((err) => {
+    if(err){
+     return next(err)
+    }
+    req.flash('success' , 'You Hav Been Successfully Logout');
+    res.redirect('/login');
+  })
+})
 
 
 module.exports = router;

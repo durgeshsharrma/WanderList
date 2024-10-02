@@ -22,3 +22,9 @@ module.exports.resortSchema = joi.object({
         email : joi.string().required(),
 
     }).required();
+
+
+    module.exports.reviewSchema = joi.object({
+        rating : joi.number().min(1).max(5).required(),
+        comment : joi.string().required(),
+    }).required()

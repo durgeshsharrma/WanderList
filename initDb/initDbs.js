@@ -18,6 +18,9 @@ initDb();
 
 async function initDb(){
      await resort.deleteMany({});
+    
+     ResortData.data = ResortData.data.map((obj) => ({...obj , owner : '66fc3c5bf76f27ef24ee7814'}))
+     
      await resort.insertMany(ResortData.data);
      console.log('inserted successfully');
      await resort.find({});
